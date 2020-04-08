@@ -1,12 +1,15 @@
 {
   "name": "p24-api-db",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Siim Liimand",
   "license": "ISC",
-  "repository": "https://github.com/P24-ee/api-db.git"
+  "repository": "https://github.com/P24-ee/api-db.git",
+  "dependencies": {
+    "mysql": "latest"
+  }
 }

@@ -1,4 +1,4 @@
-import mysql from "mysql";
+const mysql = require("mysql");
 
 const Db = (multipleStatements = false) => {
   const host = process.env.DB_HOST;
@@ -88,5 +88,5 @@ const Db = (multipleStatements = false) => {
   };
 };
 
-export default Db;
+module.exports = Db;
 
