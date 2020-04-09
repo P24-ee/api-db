@@ -1,3 +1,5 @@
+const DbPropType = require('./prop_types/Db.propType');
+
 const Repository = db => {
 
     const checkIfTableExists = async table => {
@@ -16,5 +18,11 @@ const Repository = db => {
         checkIfTableExists
     };
 };
+
+if (process.env.NODE_ENV !== 'production') {
+    Repository.propTypes = {
+        db: PropTypes.shape(DbPropType)
+    };
+}
 
 module.exports = Repository;

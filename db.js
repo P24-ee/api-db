@@ -1,4 +1,5 @@
 const mysql = require("mysql");
+const PropTypes = require('prop-types');
 
 const Db = (multipleStatements = false) => {
     const host = process.env.DB_HOST;
@@ -14,6 +15,8 @@ const Db = (multipleStatements = false) => {
         port: port,
         multipleStatements: multipleStatements,
     });
+
+    const getConnection = () => connection;
 
     const query = async (sql) => {
         return await new Promise((resolve, reject) => {
@@ -75,17 +78,25 @@ const Db = (multipleStatements = false) => {
         return await query("SELECT COUNT(*) AS count FROM" + " " + table);
     };
 
+    const close = () => {
+        connection.end();
+    };
+
     return {
-        getConnection: connection,
+        getConnection,
         query,
         insert,
         update,
         get,
         countAllRows,
-        close: () => {
-            connection.end();
-        },
+        close,
     };
 };
+
+if (process.env.NODE_ENV !== 'production') {
+    Db.propTypes = {
+        multipleStatements: PropTypes.bool
+    };
+}
 
 module.exports = Db;
