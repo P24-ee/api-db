@@ -1,11 +1,5 @@
 const Repository = db => {
 
-    const repositories = {};
-
-    const getDb = () => {
-        return db;
-    };
-
     const checkIfTableExists = async table => {
         const results = await db.query(
             "SELECT * " +
@@ -18,19 +12,8 @@ const Repository = db => {
         return results && results.length > 0;
     };
 
-    const add = (name, repository) => {
-        repositories[name] = repository;
-    };
-
-    const get = name => {
-        return repositories[name];
-    };
-
     return {
-        getDb,
-        checkIfTableExists,
-        add,
-        get,
+        checkIfTableExists
     };
 };
 
