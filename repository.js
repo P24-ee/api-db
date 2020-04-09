@@ -19,7 +19,7 @@ const Repository = db => {
     };
 
     const add = (name, repository) => {
-        repositories[name] = repository(db);
+        repositories[name] = repository;
     };
 
     const get = name => {
