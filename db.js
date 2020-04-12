@@ -1,5 +1,4 @@
 const mysql = require("mysql");
-const PropTypes = require('prop-types');
 
 const Db = (multipleStatements = false) => {
     const host = process.env.DB_HOST;
@@ -92,11 +91,5 @@ const Db = (multipleStatements = false) => {
         close,
     };
 };
-
-if (process.env.NODE_ENV !== 'production') {
-    Db.propTypes = {
-        multipleStatements: PropTypes.bool
-    };
-}
 
 module.exports = Db;

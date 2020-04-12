@@ -1,6 +1,6 @@
 {
   "name": "p24-api-db",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -11,8 +11,5 @@
   "repository": "https://github.com/P24-ee/api-db.git",
   "dependencies": {
     "mysql": "latest"
-  },
-  "devDependencies": {
-    "prop-types": "^15.7.2"
   }
 }
