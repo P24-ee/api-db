@@ -14,8 +14,13 @@ const Repository = db => {
         return results && results.length > 0;
     };
 
+    const getDb = () => {
+        return db;
+    };
+
     return {
-        checkIfTableExists
+        checkIfTableExists,
+        getDb
     };
 };
 
