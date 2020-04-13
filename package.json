@@ -10,6 +10,6 @@
   "license": "ISC",
   "repository": "https://github.com/P24-ee/api-db.git",
   "dependencies": {
-    "mysql": "latest"
+    "mysql": "^2.18.1"
   }
 }

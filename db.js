@@ -21,7 +21,7 @@ const Db = (multipleStatements = false) => {
         return await new Promise((resolve, reject) => {
             connection.query(sql, (err, results) => {
                 if (err) {
-                    reject(err);
+                    console.log('err',err);
                 } else {
                     resolve(results);
                 }
@@ -38,8 +38,8 @@ const Db = (multipleStatements = false) => {
     };
 
     const update = async (table, data, conditions) => {
-        let values = createConditions(data);
-        let where = createConditions(conditions, "=", " AND ");
+        const values = createConditions(data);
+        const where = createConditions(conditions, "=", " AND ");
 
         return await query(
             "UPDATE " + table + " SET " + values + " WHERE " + where
